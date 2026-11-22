@@ -63,3 +63,13 @@ scikit-learn mean baseline are implemented.
 See [Day 64 results](docs/day64_eda_baseline.md).
 
 This is a baseline, not a production-ready ML model.
+
+## Day 65 - Supervised Models
+
+Trained and evaluated a mean baseline, Ridge regression
+and Random Forest using a leakage-safe chronological split.
+
+See [Day 65 model comparison](docs/day65_model_training.md).
+
+The saved pipeline remains local. The held-out test
+period has not been used for model selection.
