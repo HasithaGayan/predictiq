@@ -53,3 +53,13 @@ Day 63: Initial project setup and data preparation.
 
 A trained model, production API, deployment and
 evaluation metrics have NOT yet been completed.
+
+## Day 64 - EDA and Baseline
+
+A leakage-safe chronological split, training-only
+exploratory analysis, four visualizations, and a
+scikit-learn mean baseline are implemented.
+
+See [Day 64 results](docs/day64_eda_baseline.md).
+
+This is a baseline, not a production-ready ML model.
