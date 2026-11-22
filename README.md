@@ -73,3 +73,14 @@ See [Day 65 model comparison](docs/day65_model_training.md).
 
 The saved pipeline remains local. The held-out test
 period has not been used for model selection.
+
+## Day 66 - Model Improvement
+
+Implemented training-only chronological cross-validation,
+two engineered features, and controlled Random Forest
+hyperparameter comparisons.
+
+See [Day 66 model improvement](docs/day66_model_improvement.md).
+
+The selected pipeline is stored locally.
+The held-out test set remains unused.
