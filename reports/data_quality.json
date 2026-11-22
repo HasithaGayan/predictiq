@@ -1,0 +1,49 @@
+{
+  "source": "hour.csv",
+  "source_sha256": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+  "raw_rows": 17379,
+  "raw_columns": 17,
+  "missing_cells": 0,
+  "duplicate_rows": 0,
+  "duplicate_hour_keys": 0,
+  "cleaned_rows": 17379,
+  "target": "cnt",
+  "excluded_columns": [
+    "instant",
+    "casual",
+    "registered"
+  ],
+  "created_features": [
+    "is_weekend",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "output_columns": [
+    "dteday",
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weather_code",
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "is_weekend",
+    "hour_sin",
+    "hour_cos",
+    "cnt"
+  ],
+  "cleaning_decisions": [
+    "Reject incomplete records",
+    "Reject invalid dates and categories",
+    "Reject invalid or inconsistent counts",
+    "Reject duplicate date/hour observations",
+    "Retain valid observations",
+    "Sort chronologically",
+    "Exclude identifier and target leakage columns"
+  ]
+}
