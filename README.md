@@ -117,3 +117,48 @@ See [Day 69 embeddings and transformers](docs/day69_embeddings.md).
 
 This is a semantic-retrieval experiment,
 not a text-generation or fine-tuning system.
+
+## Day 70 - PredictIQ Web Application
+
+PredictIQ includes a FastAPI backend and a responsive
+frontend for historical bicycle-demand exploration.
+
+The API uses the previously trained Day 66 Random
+Forest pipeline. The website offers scenario presets,
+validated input fields and a model-based 24-hour chart.
+
+### Environment
+
+Install CPU-only PyTorch using the official CPU index:
+
+    python -m pip install torch==2.15.0+cpu --index-url https://download.pytorch.org/whl/cpu
+
+Install the remaining project dependencies:
+
+    python -m pip install -r requirements.txt
+
+### Required Local Model
+
+    reports/generated/day66/selected_pipeline.joblib
+
+The trained model is excluded from GitHub.
+Prepare the historical dataset and reproduce
+Day 66 training before starting a new installation.
+
+### Start
+
+    python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
+
+Open http://127.0.0.1:8000/
+
+### Tests
+
+    python -m pytest tests -q
+
+### Documentation
+
+- [Model Card](docs/day70_model_card.md)
+- [Demo and Verification](docs/day70_demo.md)
+
+This is an educational historical application,
+not a live or publicly deployed forecasting service.

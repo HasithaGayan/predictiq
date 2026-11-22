@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="PredictIQ logo mark">
+<defs>
+  <linearGradient id="tile" x1="0" x2="1" y1="0" y2="1">
+    <stop stop-color="#122D49"/><stop offset="0.65" stop-color="#0A1931"/><stop offset="1" stop-color="#071426"/>
+  </linearGradient>
+  <linearGradient id="mark" x1="0.06" x2="0.94" y1="0.08" y2="0.9">
+    <stop stop-color="#7FFFE0"/><stop offset="0.40" stop-color="#16DCC2"/><stop offset="0.72" stop-color="#13BBE8"/><stop offset="1" stop-color="#3782F3"/>
+  </linearGradient>
+  <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#71FFE1" stop-opacity="0.25"/><stop offset="1" stop-color="#1DA5EE" stop-opacity="0"/></linearGradient>
+</defs>
+<rect x="14" y="14" width="484" height="484" rx="122" fill="url(#tile)"/>
+<rect x="17" y="17" width="478" height="478" rx="120" fill="none" stroke="#3ACBC7" stroke-opacity=".26" stroke-width="5"/>
+<circle cx="360" cy="143" r="175" fill="url(#sheen)"/>
+<!-- Three data motion bars: subtle, legible at app-icon scale -->
+<path d="M120 208 L149 208" stroke="#56F9D4" stroke-width="15" stroke-linecap="round"/>
+<path d="M127 178 L159 178" stroke="#53F7D3" stroke-width="15" stroke-linecap="round"/>
+<!-- Distinctive P monogram: rising motion and a rounded intelligence loop -->
+<path fill="url(#mark)" fill-rule="evenodd" d="M172 401 L210 112 H299 C377 112 426 159 418 232 C411 305 358 341 281 341 H238 L230 401 Z M260 183 L249 270 H295 C329 270 349 254 353 227 C356 199 336 183 306 183 Z"/>
+<path d="M258 307 L231 307" stroke="#ACFFF1" stroke-width="8" stroke-linecap="round" opacity=".48"/>
+</svg>
