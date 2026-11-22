@@ -106,3 +106,14 @@ See [Day 68 neural-network results](docs/day68_neural_network.md).
 
 The existing Random Forest remains the leading
 supervised reference model.
+
+## Day 69 - Embeddings
+
+Implemented pretrained transformer embeddings,
+cosine-similarity document ranking, token inspection,
+and automated tests.
+
+See [Day 69 embeddings and transformers](docs/day69_embeddings.md).
+
+This is a semantic-retrieval experiment,
+not a text-generation or fine-tuning system.
