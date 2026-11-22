@@ -95,3 +95,14 @@ See [Day 67 clustering and PCA](docs/day67_unsupervised.md).
 
 The clustering experiment is exploratory, not a
 production demand-prediction model.
+
+## Day 68 - Neural Networks
+
+Implemented a PyTorch neural-network training
+experiment with two learning rates, a forward pass,
+backpropagation, loss tracking and validation evaluation.
+
+See [Day 68 neural-network results](docs/day68_neural_network.md).
+
+The existing Random Forest remains the leading
+supervised reference model.
