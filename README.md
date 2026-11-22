@@ -84,3 +84,14 @@ See [Day 66 model improvement](docs/day66_model_improvement.md).
 
 The selected pipeline is stored locally.
 The held-out test set remains unused.
+
+## Day 67 - Unsupervised Learning
+
+Implemented training-only K-Means clustering,
+feature scaling, PCA visualization, cluster inspection,
+and automated correctness tests.
+
+See [Day 67 clustering and PCA](docs/day67_unsupervised.md).
+
+The clustering experiment is exploratory, not a
+production demand-prediction model.
