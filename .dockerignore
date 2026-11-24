@@ -1,0 +1,14 @@
+.git
+.venv
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+.pytest_cache
+data/
+docs/
+tests/
+reports/generated/*
+!reports/generated/day66/
+reports/generated/day66/*
+!reports/generated/day66/selected_pipeline.joblib

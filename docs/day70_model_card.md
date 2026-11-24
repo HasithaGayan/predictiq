@@ -1,4 +1,4 @@
-﻿# PredictIQ — Day 70 Model Card
+# PredictIQ — Day 70 Model Card
 
 ## Model
 
@@ -77,11 +77,7 @@ Claims of real-time accuracy.
 
 reports/generated/day66/selected_pipeline.joblib
 
-The trained artifact stays in the ignored local
-generated directory rather than GitHub.
-
-It must be regenerated or provided separately
-in a trusted deployment environment.
+The verified Day 66 model artifact is packaged for container deployment. Its SHA256 checksum is validated during the Docker build.
 
 Never load untrusted pickle or joblib artifacts.
 
@@ -134,3 +130,21 @@ Bike Sharing Dataset.
 UCI Machine Learning Repository.
 
 https://doi.org/10.24432/C5W894
+
+
+## Deployment Preparation
+
+- Python 3.14.2 Linux container.
+- Single-worker FastAPI inference server.
+- Non-root container execution.
+- Model checksum verification during build.
+- 30 repeated local container predictions passed.
+- Average local API response time: 71.59 ms.
+- Observed memory after testing: 234.4 MiB.
+- Invalid input correctly rejected with HTTP 422.
+
+The dataset is licensed under CC BY 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+The model is derived from the attributed historical UCI dataset.
+Cloud performance and availability require separate verification.
