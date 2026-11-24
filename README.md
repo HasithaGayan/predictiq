@@ -1,178 +1,195 @@
-﻿# PredictIQ — Urban Mobility Demand Intelligence
+# PredictIQ
 
-Project 04 of the HGBP 87-Day AI + Full-Stack Roadmap.
+### Urban Mobility Demand Intelligence
 
-## Goal
+PredictIQ is an interactive machine learning application that estimates hourly bicycle rental demand using historical weather and calendar conditions.
 
-Build a professional machine-learning application
-that predicts hourly bike rental demand from weather
-and calendar features.
+The application combines a trained Random Forest regression pipeline, a FastAPI backend and a responsive web interface.
 
-## Project Design
+## Live Application
 
-Background: #F7FAF9
-Primary teal: #0F766E
-Text: #12312D
+- [Open PredictIQ](https://predictiq-iota-plum.vercel.app/)
+- [Interactive API Documentation](https://predictiq-iota-plum.vercel.app/docs)
+- [Professional Portfolio](https://hasithagayan.github.io/ai-fullstack-87/)
 
-## ML Task
+## Application Preview
 
-Type: Supervised regression
+![PredictIQ homepage](docs/screenshots/predictiq-home.png)
 
-Target: cnt (total hourly bike rentals)
+## Key Features
 
-Important target leakage:
-casual + registered = cnt
+- Genuine Random Forest model inference
+- Interactive weather and calendar inputs
+- Morning commute, weekend and rainy evening scenarios
+- Hourly bicycle rental demand estimation
+- Interactive 24-hour demand visualization
+- Validated FastAPI endpoints
+- Model evaluation and documented limitations
+- Responsive web interface
+- Docker and Vercel deployment configurations
 
-These count components must NOT be model features.
+## Screenshot Gallery
 
-## Dataset
+### Morning Commute
 
-UCI Machine Learning Repository — Bike Sharing Dataset
+![Morning commute prediction](docs/screenshots/predictiq-morning.png)
 
-Source:
-https://archive.ics.uci.edu/dataset/275/bike-sharing-dataset
+### Weekend Afternoon
 
-Citation:
-Fanaee-T, H. (2013). Bike Sharing [Dataset].
-UCI Machine Learning Repository.
-https://doi.org/10.24432/C5W894
+![Weekend afternoon prediction](docs/screenshots/predictiq-weekend.png)
 
-License: CC BY 4.0
+### Rainy Evening
 
-Data covers historical 2011–2012 rentals.
-The demo must not claim current forecasting accuracy.
+![Rainy evening prediction](docs/screenshots/predictiq-rainy.png)
 
-## Planned Architecture
+### Model Information
 
-Data -> Cleaning -> EDA -> Model Pipeline
-     -> Model Evaluation -> FastAPI -> Frontend
+![Model performance](docs/screenshots/predictiq-model.png)
 
-## Development Status
+### API Documentation
 
-Day 63: Initial project setup and data preparation.
+![FastAPI documentation](docs/screenshots/predictiq-api.png)
 
-A trained model, production API, deployment and
-evaluation metrics have NOT yet been completed.
+## Model Performance
 
-## Day 64 - EDA and Baseline
+| Metric | Result |
+|---|---:|
+| Historical observations | 17,379 |
+| Validation MAE | 47.68 rentals |
+| Validation RMSE | 74.14 rentals |
+| Input features | 15 |
+| Recorded automated tests passed | 57 |
+| Repeated local container predictions | 30/30 |
+| Average local API response time | 71.59 ms |
+| Observed local container memory | 234.4 MiB |
 
-A leakage-safe chronological split, training-only
-exploratory analysis, four visualizations, and a
-scikit-learn mean baseline are implemented.
+Performance measurements are from documented local experiments. Cloud latency may differ.
 
-See [Day 64 results](docs/day64_eda_baseline.md).
+## Architecture
 
-This is a baseline, not a production-ready ML model.
+    UCI Bike Sharing Dataset
+              |
+        Data Preparation
+              |
+       Feature Engineering
+              |
+     Random Forest Pipeline
+              |
+         FastAPI Backend
+              |
+      Interactive Frontend
+              |
+       Vercel Deployment
 
-## Day 65 - Supervised Models
+The project also includes exploratory clustering, neural network and transformer embedding experiments.
 
-Trained and evaluated a mean baseline, Ridge regression
-and Random Forest using a leakage-safe chronological split.
+## Technology Stack
 
-See [Day 65 model comparison](docs/day65_model_training.md).
+- Python 3.14
+- Scikit-learn
+- Pandas
+- NumPy
+- Joblib
+- FastAPI
+- Pydantic
+- HTML, CSS and JavaScript
+- pytest
+- Docker
+- Vercel
 
-The saved pipeline remains local. The held-out test
-period has not been used for model selection.
+## API Endpoints
 
-## Day 66 - Model Improvement
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | /api/health | Application and model health |
+| GET | /api/model-info | Model information |
+| POST | /api/predict | Hourly demand estimation |
+| GET | /docs | Interactive API documentation |
 
-Implemented training-only chronological cross-validation,
-two engineered features, and controlled Random Forest
-hyperparameter comparisons.
+## Local Installation
 
-See [Day 66 model improvement](docs/day66_model_improvement.md).
+Clone the repository:
 
-The selected pipeline is stored locally.
-The held-out test set remains unused.
+    git clone https://github.com/HasithaGayan/predictiq.git
+    cd predictiq
 
-## Day 67 - Unsupervised Learning
+Create a Python 3.14 virtual environment:
 
-Implemented training-only K-Means clustering,
-feature scaling, PCA visualization, cluster inspection,
-and automated correctness tests.
+    python -m venv .venv
 
-See [Day 67 clustering and PCA](docs/day67_unsupervised.md).
+Activate on Windows:
 
-The clustering experiment is exploratory, not a
-production demand-prediction model.
+    .venv\Scripts\activate
 
-## Day 68 - Neural Networks
-
-Implemented a PyTorch neural-network training
-experiment with two learning rates, a forward pass,
-backpropagation, loss tracking and validation evaluation.
-
-See [Day 68 neural-network results](docs/day68_neural_network.md).
-
-The existing Random Forest remains the leading
-supervised reference model.
-
-## Day 69 - Embeddings
-
-Implemented pretrained transformer embeddings,
-cosine-similarity document ranking, token inspection,
-and automated tests.
-
-See [Day 69 embeddings and transformers](docs/day69_embeddings.md).
-
-This is a semantic-retrieval experiment,
-not a text-generation or fine-tuning system.
-
-## Day 70 - PredictIQ Web Application
-
-PredictIQ includes a FastAPI backend and a responsive
-frontend for historical bicycle-demand exploration.
-
-The API uses the previously trained Day 66 Random
-Forest pipeline. The website offers scenario presets,
-validated input fields and a model-based 24-hour chart.
-
-### Environment
-
-Install CPU-only PyTorch using the official CPU index:
-
-    python -m pip install torch==2.15.0+cpu --index-url https://download.pytorch.org/whl/cpu
-
-Install the remaining project dependencies:
+Install inference dependencies:
 
     python -m pip install -r requirements.txt
 
-### Required Local Model
-
-    reports/generated/day66/selected_pipeline.joblib
-
-The trained model is excluded from GitHub.
-Prepare the historical dataset and reproduce
-Day 66 training before starting a new installation.
-
-### Start
+Start the application:
 
     python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
 
-Open http://127.0.0.1:8000/
+Open:
 
-### Tests
+http://127.0.0.1:8000/
 
-    python -m pytest tests -q
+The verified trained model is included in the repository.
 
-### Documentation
+## Docker Deployment
 
+    docker build -t predictiq .
+    docker run --rm -p 10000:10000 predictiq
+
+Open http://localhost:10000/
+
+## Testing
+
+Install the test dependencies:
+
+    python -m pip install pytest httpx
+
+Run the API tests:
+
+    python -m pytest tests/test_day70_api.py tests/test_day70_failures.py -q
+
+The wider experimental test suite requires the training environment documented in requirements-training.txt.
+
+## Engineering Documentation
+
+- [Data Quality](docs/day63_data_quality.md)
+- [EDA and Baseline](docs/day64_eda_baseline.md)
+- [Supervised Model Training](docs/day65_model_training.md)
+- [Model Improvement](docs/day66_model_improvement.md)
+- [Unsupervised Learning](docs/day67_unsupervised.md)
+- [Neural Network Experiments](docs/day68_neural_network.md)
+- [Embeddings](docs/day69_embeddings.md)
+- [Application Verification](docs/day70_demo.md)
 - [Model Card](docs/day70_model_card.md)
-- [Demo and Verification](docs/day70_demo.md)
 
-This is an educational historical application,
-not a live or publicly deployed forecasting service.
+## Dataset Attribution
 
-## Runtime and Training Environments
+Fanaee-T, H. (2013). Bike Sharing Dataset.
+UCI Machine Learning Repository.
 
-For application inference:
+https://doi.org/10.24432/C5W894
 
-    python -m pip install -r requirements.txt
+Dataset license: CC BY 4.0.
 
-For model training and experimental development:
+## Current Limitations
 
-    python -m pip install -r requirements-training.txt
+- The model uses historical 2011-2012 Washington, DC bicycle rental data.
+- Predictions are educational scenario estimates, not current demand forecasts.
+- Final independent held-out evaluation remains pending.
+- Individual prediction errors may be substantial.
+- Cloud response times and availability may vary.
+- No real-time weather or rental data is used.
+- Never load untrusted joblib or pickle artifacts.
 
-The application uses Python 3.14 and the verified Day 66 Random Forest pipeline.
+## Developer
 
-Docker deployment remains supported. The Vercel configuration provides an additional serverless deployment option.
+Developed by Hasitha Gayan.
+
+AI and Full-Stack Developer | IT Undergraduate
+
+[GitHub](https://github.com/HasithaGayan) |
+[Portfolio](https://hasithagayan.github.io/ai-fullstack-87/)
