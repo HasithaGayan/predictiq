@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "includeFiles": "{reports/generated/day66/selected_pipeline.joblib,frontend/**}",
+      "excludeFiles": "{tests/**,docs/**,requirements-training.txt}"
+    }
+  }
+}

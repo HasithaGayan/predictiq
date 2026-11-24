@@ -162,3 +162,17 @@ Open http://127.0.0.1:8000/
 
 This is an educational historical application,
 not a live or publicly deployed forecasting service.
+
+## Runtime and Training Environments
+
+For application inference:
+
+    python -m pip install -r requirements.txt
+
+For model training and experimental development:
+
+    python -m pip install -r requirements-training.txt
+
+The application uses Python 3.14 and the verified Day 66 Random Forest pipeline.
+
+Docker deployment remains supported. The Vercel configuration provides an additional serverless deployment option.
